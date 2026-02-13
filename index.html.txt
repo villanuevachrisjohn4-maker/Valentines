@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever in Bloom</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="petals"></div>
+
+<section class="hero">
+    <img src="bouquet.jpg" alt="Sunflower and Peonies Bouquet">
+
+    <div class="letter">
+        <h1>Forever in Bloom 🌻</h1>
+        <p>
+            Like sunflowers chasing the light and peonies blooming with gentle grace,
+            my heart always turns toward you.
+        </p>
+        <p>
+            In every season, in every sunrise, you are my warmth,
+            my color, my forever spring.
+        </p>
+        <p class="signature">With all my love 💖</p>
+    </div>
+</section>
+
+<script>
+// Create falling petals
+const petalsContainer = document.querySelector('.petals');
+
+function createPetal() {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+    
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+    petal.style.opacity = Math.random();
+    petal.style.transform = `scale(${0.5 + Math.random()})`;
+    
+    petalsContainer.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 10000);
+}
+
+setInterval(createPetal, 300);
+</script>
+
+</body>
+</html>
