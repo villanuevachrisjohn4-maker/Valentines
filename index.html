@@ -8,20 +8,16 @@
 </head>
 <body>
 
-<audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mp3">
+<audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="sky"></div>
 
 <div class="flower-field"></div>
-
-<!-- 🌿 Grass Layer -->
-<div class="grass"></div>
-
+<div class="grass-field"></div>
 <div class="fireflies"></div>
 
-<!-- YOUR EXACT MESSAGE -->
 <div class="overlay">
     <div class="letter">
         <h1>Happy Valentine’s Day 💖</h1>
