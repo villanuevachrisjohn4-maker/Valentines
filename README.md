@@ -2,185 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Do You Love Me? 🌻</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-  margin: 0;
-  overflow: hidden;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
-}
-
-/* FIELD CONTAINER */
-.field {
-  position: absolute;
-  bottom: 0;
-  width: 200%;
-  height: 60%;
-  display: flex;
-  align-items: flex-end;
-  animation: drift 60s linear infinite;
-}
-
-/* Cinematic slow camera drift */
-@keyframes drift {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-20%); }
-  100% { transform: translateX(0); }
-}
-
-/* FLOWERS */
-.flower {
-  position: relative;
-  width: 40px;
-  height: 100px;
-  margin: 0 12px;
-  animation: wind 4s ease-in-out infinite alternate;
-}
-
-/* Wind wave */
-@keyframes wind {
-  0% { transform: rotate(-2deg); }
-  100% { transform: rotate(2deg); }
-}
-
-.stem {
-  width: 6px;
-  height: 70px;
-  background: #2e7d32;
-  margin: auto;
-}
-
-.head {
-  width: 40px;
-  height: 40px;
-  background: radial-gradient(circle, #5d4037 30%, #fbc02d 31%);
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-}
-
-/* FOG LAYER */
-.fog {
-  position: absolute;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(255,255,255,0.1), transparent);
-  animation: fogMove 40s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes fogMove {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* QUESTION BOX */
-.question-box {
-  position: absolute;
-  top: 35%;
-  width: 100%;
-  text-align: center;
-  color: white;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-button {
-  padding: 15px 30px;
-  font-size: 18px;
-  margin: 15px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.yes {
-  background: #ff4081;
-  color: white;
-}
-
-.no {
-  background: white;
-  color: black;
-}
-
-.yes:hover {
-  transform: scale(1.1);
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  h1 { font-size: 28px; }
-  button { padding: 12px 20px; font-size: 16px; }
-}
-</style>
+<title>Happy Valentine’s Day 💖</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- MUSIC -->
 <audio id="bgMusic" loop>
-  <source src="your-music.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mp3">
 </audio>
 
-<!-- FOG -->
-<div class="fog"></div>
+<!-- Animated Sky -->
+<div class="sky"></div>
 
-<!-- FLOWER FIELD -->
-<div class="field" id="field"></div>
+<!-- Fireflies -->
+<div class="fireflies"></div>
 
-<!-- QUESTION -->
-<div class="question-box">
-  <h1>Do you love me? 🌻</h1>
-  <button class="yes" onclick="showLove()">Yes 💖</button>
-  <button class="no" id="noBtn">No 🙈</button>
+<!-- Flower Field -->
+<div class="flower-field"></div>
+
+<!-- YOUR EXACT MESSAGE -->
+<div class="overlay">
+    <div class="letter">
+        <h1>Happy Valentine’s Day 💖</h1>
+        <p>
+            Everything I feel for you is genuine,
+            my love for you continues to grow every single day.
+        </p>
+        <p>
+            You're the reason behind my secret smiles everyday,
+            and you'll always have me. I love you always.
+        </p>
+        <p class="signature">To my Yellow 🌻</p>
+        <button onclick="startExperience()">Open My Heart</button>
+        <div id="hiddenMessage" class="hidden-message">
+            💛 You are my sunshine, my happiness, my always.
+        </div>
+    </div>
 </div>
 
-<script>
-/* Create dense flower field */
-const field = document.getElementById("field");
-
-for (let i = 0; i < 80; i++) {
-  let flower = document.createElement("div");
-  flower.className = "flower";
-
-  let stem = document.createElement("div");
-  stem.className = "stem";
-
-  let head = document.createElement("div");
-  head.className = "head";
-
-  flower.appendChild(head);
-  flower.appendChild(stem);
-  field.appendChild(flower);
-}
-
-/* Make NO button move */
-const noBtn = document.getElementById("noBtn");
-
-noBtn.addEventListener("mouseover", () => {
-  noBtn.style.position = "absolute";
-  noBtn.style.left = Math.random() * 80 + "%";
-  noBtn.style.top = Math.random() * 80 + "%";
-});
-
-/* Love message */
-function showLove() {
-  document.querySelector("h1").innerText = "I love you moreee 🌸💖";
-}
-
-/* MUSIC FIX */
-document.body.addEventListener("click", function () {
-  const music = document.getElementById("bgMusic");
-  music.play().catch(() => {});
-}, { once: true });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
