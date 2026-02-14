@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Valentine’s Day 💖</title>
+<title>For My Yellow 🌻</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,45 +12,35 @@
     <source src="music.mp3" type="audio/mp3">
 </audio>
 
-<!-- Falling Hearts -->
-<div class="hearts"></div>
-
-<!-- Floating Petals -->
-<div class="petals"></div>
-
-<!-- Envelope -->
-<div class="envelope-wrapper" onclick="openEnvelope()">
-    <div class="envelope">
-        <div class="flap"></div>
-        <div class="glow"></div>
+<div class="overlay">
+    <div class="letter">
+        <h1>Happy Valentine’s Day 💖</h1>
+        <p>
+            Everything I feel for you is genuine,
+            my love for you continues to grow every single day.
+        </p>
+        <p>
+            You're the reason behind my secret smiles everyday,
+            and you'll always have me. I love you always.
+        </p>
+        <p class="signature">To my Yellow 🌻</p>
+        <button onclick="startExperience()">Open My Heart</button>
+        <div id="hiddenMessage" class="hidden-message">
+            💛 You are my sunshine, my happiness, my always.
+        </div>
     </div>
 </div>
 
-<!-- Letter -->
-<div class="letter hidden">
-    <h1>Happy Valentine’s Day 💖</h1>
-    <p>
-        Everything i feel for you is genuine,
-        my love for you continues to grow every single day.
-    </p>
-    <p>
-        You're the reason behind of my secret smiles everyday,
-        and you'll always have me, I love you always.
-    </p>
-    <p class="signature">To my Yellow 🌻</p>
-    <button onclick="revealMessage()">Open My Heart</button>
-</div>
-
-<div id="hiddenMessage" class="hidden-message">
-    💛 You are my sunshine, my happiness, my always.
-</div>
-
-<!-- Flowers -->
+<!-- REAL FLOWERS -->
 <div class="flowers">
-    <div class="sunflower"></div>
-    <div class="peony peony1"></div>
-    <div class="peony peony2"></div>
+    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" class="flower sunflower">
+    <img src="https://images.unsplash.com/photo-1597848212624-1c3f6c8e2db2" class="flower peony">
+    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" class="flower sunflower2">
+    <img src="https://images.unsplash.com/photo-1597848212624-1c3f6c8e2db2" class="flower peony2">
 </div>
+
+<div class="petals"></div>
+<div class="hearts"></div>
 
 <script src="script.js"></script>
 </body>
