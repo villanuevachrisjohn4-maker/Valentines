@@ -3,10 +3,10 @@ function startExperience() {
     document.getElementById("bgMusic").play().catch(() => {});
 }
 
-/* 🌸🌻 Generate MANY flowers */
+/* Generate flowers */
 const field = document.querySelector(".flower-field");
 
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < 35; i++) {
     const flower = document.createElement("div");
     flower.className = "flower";
     flower.style.left = Math.random() * 100 + "%";
@@ -23,10 +23,10 @@ for (let i = 0; i < 40; i++) {
     field.appendChild(flower);
 }
 
-/* ✨ Fireflies */
+/* Fireflies */
 const fireflies = document.querySelector(".fireflies");
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 40; i++) {
     const light = document.createElement("span");
     light.style.left = Math.random() * 100 + "vw";
     light.style.animationDuration = 5 + Math.random() * 5 + "s";
