@@ -1,27 +1,34 @@
 function startExperience() {
     document.getElementById("hiddenMessage").style.display = "block";
-    
-    const music = document.getElementById("bgMusic");
-    music.play().catch(() => {
-        console.log("User interaction required for music.");
-    });
+    document.getElementById("bgMusic").play().catch(() => {});
 }
 
-/* Generate floating petals */
-const petalsContainer = document.querySelector(".petals");
-for (let i = 0; i < 25; i++) {
-    const petal = document.createElement("span");
-    petal.style.left = Math.random() * 100 + "vw";
-    petal.style.animationDuration = 5 + Math.random() * 5 + "s";
-    petalsContainer.appendChild(petal);
+/* 🌸🌻 Generate MANY flowers */
+const field = document.querySelector(".flower-field");
+
+for (let i = 0; i < 40; i++) {
+    const flower = document.createElement("div");
+    flower.className = "flower";
+    flower.style.left = Math.random() * 100 + "%";
+    flower.style.animationDuration = 3 + Math.random() * 4 + "s";
+
+    const bloom = document.createElement("div");
+    bloom.className = Math.random() > 0.5 ? "peony" : "sunflower";
+
+    const stem = document.createElement("div");
+    stem.className = "stem";
+
+    flower.appendChild(bloom);
+    flower.appendChild(stem);
+    field.appendChild(flower);
 }
 
-/* Generate falling hearts */
-const heartsContainer = document.querySelector(".hearts");
-for (let i = 0; i < 30; i++) {
-    const heart = document.createElement("span");
-    heart.innerHTML = "❤";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = 4 + Math.random() * 4 + "s";
-    heartsContainer.appendChild(heart);
+/* ✨ Fireflies */
+const fireflies = document.querySelector(".fireflies");
+
+for (let i = 0; i < 50; i++) {
+    const light = document.createElement("span");
+    light.style.left = Math.random() * 100 + "vw";
+    light.style.animationDuration = 5 + Math.random() * 5 + "s";
+    fireflies.appendChild(light);
 }
