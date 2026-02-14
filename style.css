@@ -27,7 +27,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* 🌻🌸 Flower Field */
+/* 🌻🌸 FLOWERS */
 .flower-field {
     position: absolute;
     bottom: 0;
@@ -38,12 +38,12 @@ body {
 
 .flower {
     position: absolute;
-    bottom: 0;
-    transform-origin: bottom;
+    bottom: 80px;
+    transform-origin: bottom center;
     animation: sway 4s ease-in-out infinite alternate;
 }
 
-/* 🌿 Stem */
+/* Stem */
 .stem {
     width: 6px;
     height: 100px;
@@ -52,85 +52,99 @@ body {
     border-radius: 3px;
 }
 
-/* 🌻 Sunflower (cartoon style like your image) */
+/* 🌻 SUNFLOWER PETALS */
 .sunflower {
     position: relative;
     width: 60px;
     height: 60px;
-    margin: auto;
 }
 
-.sunflower::before {
-    content: "";
+.petal {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    background: radial-gradient(circle, #5c3d00 35%, transparent 36%);
+    width: 18px;
+    height: 40px;
+    background: #ffd633;
     border-radius: 50%;
+    top: 10px;
+    left: 21px;
+    transform-origin: bottom center;
+}
+
+.center {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #5c3d00;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
     z-index: 2;
 }
 
-.sunflower::after {
-    content: "";
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    background: radial-gradient(circle, #ffd633 40%, #f4b400 70%);
-    border-radius: 50%;
-    top: -15px;
-    left: -15px;
-    z-index: 1;
-}
-
-/* 🌸 Peony (layered petals like your image) */
+/* 🌸 PEONY (4 layered depth) */
 .peony {
     position: relative;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: radial-gradient(circle at center, #ff9ecb 20%, #ff4da6 70%);
-    box-shadow: 0 0 20px #ff8ac6;
+    width: 70px;
+    height: 70px;
 }
 
-.peony::before,
-.peony::after {
-    content: "";
+.layer {
     position: absolute;
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(circle, #ffb6d9 30%, #ff4da6 80%);
     border-radius: 50%;
-    top: -10px;
-    left: -10px;
-    z-index: -1;
 }
 
-/* 🌿 Animated Grass Layer */
-.grass {
+.layer1 {
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, #ffb6d9, #ff4da6);
+}
+
+.layer2 {
+    width: 55px;
+    height: 55px;
+    background: radial-gradient(circle, #ffcce6, #ff66b2);
+    top: 7px;
+    left: 7px;
+}
+
+.layer3 {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #ffe6f2, #ff80bf);
+    top: 15px;
+    left: 15px;
+}
+
+.layer4 {
+    width: 25px;
+    height: 25px;
+    background: #fff0f5;
+    top: 22px;
+    left: 22px;
+}
+
+/* 🌾 REAL GRASS BLADES */
+.grass-field {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 120px;
-    background: repeating-linear-gradient(
-        to right,
-        #1b5e20,
-        #2e7d32 5px,
-        #1b5e20 10px
-    );
-    clip-path: polygon(
-        0% 100%, 5% 80%, 10% 100%, 15% 75%, 20% 100%, 
-        25% 85%, 30% 100%, 35% 78%, 40% 100%, 
-        45% 82%, 50% 100%, 55% 80%, 60% 100%, 
-        65% 75%, 70% 100%, 75% 85%, 80% 100%, 
-        85% 78%, 90% 100%, 95% 80%, 100% 100%
-    );
-    animation: grassMove 3s ease-in-out infinite alternate;
+    height: 80px;
     z-index: 3;
 }
 
-@keyframes grassMove {
-    from { transform: translateX(-10px); }
-    to { transform: translateX(10px); }
+.grass-blade {
+    position: absolute;
+    bottom: 0;
+    width: 3px;
+    height: 60px;
+    background: linear-gradient(to top, #0f3d0f, #4caf50);
+    transform-origin: bottom;
+    animation: wind 3s ease-in-out infinite alternate;
+}
+
+@keyframes wind {
+    from { transform: rotate(-8deg); }
+    to { transform: rotate(8deg); }
 }
 
 /* ✨ Fireflies */
@@ -155,7 +169,7 @@ body {
     to { transform: rotate(6deg); }
 }
 
-/* 💛 Letter */
+/* 💛 LETTER */
 .overlay {
     position: relative;
     z-index: 5;
