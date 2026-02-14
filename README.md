@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Sunshine 🌻</title>
+<title>Happy Valentine’s Day 💖</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,24 +12,32 @@
     <source src="music.mp3" type="audio/mp3">
 </audio>
 
-<!-- Animated Sunset Sky -->
+<!-- Animated Sky -->
 <div class="sky"></div>
 
 <!-- Fireflies -->
 <div class="fireflies"></div>
 
-<!-- Flowers Field -->
+<!-- Flower Field -->
 <div class="flower-field"></div>
 
-<!-- Center Card -->
-<div class="card">
-    <h1>For <span id="nameDisplay">My Love</span> 💛</h1>
-    <p>
-        My love grows like these flowers — gently, beautifully, endlessly.
-    </p>
-    <button onclick="startExperience()">Start Our Sunset</button>
-    <div id="hiddenMessage" class="hidden">
-        🌅 You are my sunshine, my peace, my forever.
+<!-- YOUR EXACT MESSAGE -->
+<div class="overlay">
+    <div class="letter">
+        <h1>Happy Valentine’s Day 💖</h1>
+        <p>
+            Everything I feel for you is genuine,
+            my love for you continues to grow every single day.
+        </p>
+        <p>
+            You're the reason behind my secret smiles everyday,
+            and you'll always have me. I love you always.
+        </p>
+        <p class="signature">To my Yellow 🌻</p>
+        <button onclick="startExperience()">Open My Heart</button>
+        <div id="hiddenMessage" class="hidden-message">
+            💛 You are my sunshine, my happiness, my always.
+        </div>
     </div>
 </div>
 
