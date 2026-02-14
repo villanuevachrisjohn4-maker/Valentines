@@ -12,14 +12,14 @@
     <source src="music.mp3" type="audio/mp3">
 </audio>
 
-<!-- Animated Sky -->
 <div class="sky"></div>
 
-<!-- Fireflies -->
-<div class="fireflies"></div>
-
-<!-- Flower Field -->
 <div class="flower-field"></div>
+
+<!-- 🌿 Grass Layer -->
+<div class="grass"></div>
+
+<div class="fireflies"></div>
 
 <!-- YOUR EXACT MESSAGE -->
 <div class="overlay">
