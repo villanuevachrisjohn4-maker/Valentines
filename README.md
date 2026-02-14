@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Yellow 🌻</title>
+<title>For My Sunshine 🌻</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,35 +12,26 @@
     <source src="music.mp3" type="audio/mp3">
 </audio>
 
-<div class="overlay">
-    <div class="letter">
-        <h1>Happy Valentine’s Day 💖</h1>
-        <p>
-            Everything I feel for you is genuine,
-            my love for you continues to grow every single day.
-        </p>
-        <p>
-            You're the reason behind my secret smiles everyday,
-            and you'll always have me. I love you always.
-        </p>
-        <p class="signature">To my Yellow 🌻</p>
-        <button onclick="startExperience()">Open My Heart</button>
-        <div id="hiddenMessage" class="hidden-message">
-            💛 You are my sunshine, my happiness, my always.
-        </div>
+<!-- Animated Sunset Sky -->
+<div class="sky"></div>
+
+<!-- Fireflies -->
+<div class="fireflies"></div>
+
+<!-- Flowers Field -->
+<div class="flower-field"></div>
+
+<!-- Center Card -->
+<div class="card">
+    <h1>For <span id="nameDisplay">My Love</span> 💛</h1>
+    <p>
+        My love grows like these flowers — gently, beautifully, endlessly.
+    </p>
+    <button onclick="startExperience()">Start Our Sunset</button>
+    <div id="hiddenMessage" class="hidden">
+        🌅 You are my sunshine, my peace, my forever.
     </div>
 </div>
-
-<!-- REAL FLOWERS -->
-<div class="flowers">
-    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" class="flower sunflower">
-    <img src="https://images.unsplash.com/photo-1597848212624-1c3f6c8e2db2" class="flower peony">
-    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" class="flower sunflower2">
-    <img src="https://images.unsplash.com/photo-1597848212624-1c3f6c8e2db2" class="flower peony2">
-</div>
-
-<div class="petals"></div>
-<div class="hearts"></div>
 
 <script src="script.js"></script>
 </body>
