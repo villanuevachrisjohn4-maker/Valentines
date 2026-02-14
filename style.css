@@ -1,120 +1,92 @@
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
     font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #1a2a6c, #b21f1f, #fdbb2d);
     overflow: hidden;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* Envelope */
-.envelope-wrapper {
-    position: absolute;
-    cursor: pointer;
-    animation: pulseGlow 2s infinite;
-}
-
-.envelope {
-    width: 180px;
-    height: 120px;
-    background: #ff4d6d;
-    position: relative;
-    border-radius: 10px;
-}
-
-.flap {
-    width: 100%;
-    height: 100%;
-    background: #ff758f;
-    position: absolute;
-    clip-path: polygon(0 0, 50% 60%, 100% 0);
-    transition: transform 1s;
-    transform-origin: top;
-}
-
-.glow {
-    position: absolute;
-    inset: 0;
-    box-shadow: 0 0 30px #ff4d6d;
-    border-radius: 10px;
-}
-
-.open .flap {
-    transform: rotateX(180deg);
-}
-
-/* Letter */
-.letter {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 400px;
     text-align: center;
-    animation: fadeIn 2s ease;
+    color: white;
 }
 
-.hidden {
-    display: none;
+/* Centered Letter */
+.overlay {
+    position: relative;
+    z-index: 5;
+    padding: 20px;
+}
+
+.letter {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 25px;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 0 40px rgba(255,255,255,0.3);
+    animation: fadeIn 2s ease;
 }
 
 button {
     margin-top: 20px;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 25px;
+    border-radius: 30px;
     border: none;
     background: #ff4d6d;
     color: white;
+    font-size: 16px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Flowers Growing */
+button:hover {
+    transform: scale(1.1);
+    background: #ff1e4d;
+}
+
+.hidden-message {
+    margin-top: 20px;
+    display: none;
+    font-size: 18px;
+}
+
+/* Real Flowers */
 .flowers {
     position: absolute;
     bottom: 0;
     width: 100%;
+    z-index: 1;
 }
 
-.sunflower, .peony {
+.flower {
     position: absolute;
     bottom: 0;
-    border-radius: 50%;
-    transform: scale(0);
-    animation: grow 3s forwards;
-}
-
-.sunflower {
-    left: 10%;
     width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, #5c3d00 30%, #ffcc00 60%);
-    animation-delay: 1s;
+    animation: floatUp 6s ease-in-out infinite alternate;
 }
 
-.peony {
-    width: 90px;
-    height: 90px;
-    background: radial-gradient(circle, #ff99cc 30%, #ff4da6 70%);
+.sunflower { left: 5%; }
+.peony { left: 30%; }
+.sunflower2 { right: 5%; }
+.peony2 { right: 30%; }
+
+.flower {
+    border-radius: 20px;
 }
 
-.peony1 { left: 70%; animation-delay: 1.5s; }
-.peony2 { left: 50%; animation-delay: 2s; }
-
-/* Floating Petals */
+/* Petals */
 .petals span {
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     background: pink;
     border-radius: 50%;
     animation: float 10s linear infinite;
 }
 
-/* Falling Hearts */
+/* Hearts */
 .hearts span {
     position: absolute;
     color: #ff4d6d;
@@ -123,8 +95,9 @@ button {
 }
 
 /* Animations */
-@keyframes grow {
-    to { transform: scale(1); }
+@keyframes floatUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-40px); }
 }
 
 @keyframes float {
@@ -142,13 +115,7 @@ button {
     to {opacity:1;}
 }
 
-@keyframes pulseGlow {
-    0%,100% { box-shadow: 0 0 20px #ff4d6d; }
-    50% { box-shadow: 0 0 40px #ff99aa; }
-}
-
 /* Mobile */
 @media (max-width: 600px) {
-    .sunflower { width: 80px; height: 80px; }
-    .peony { width: 60px; height: 60px; }
+    .flower { width: 80px; }
 }
