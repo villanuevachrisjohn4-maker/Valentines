@@ -1,54 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forever in Bloom</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Happy Valentine’s Day 💖</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="petals"></div>
-
-<section class="hero">
-    <img src="bouquet.jpg" alt="Sunflower and Peonies Bouquet">
+    <div class="flowers">
+        <div class="sunflower"></div>
+        <div class="peony peony1"></div>
+        <div class="peony peony2"></div>
+    </div>
 
     <div class="letter">
-        <h1>Forever in Bloom 🌻</h1>
+        <h1>Happy Valentine’s Day 💖</h1>
         <p>
-            Like sunflowers chasing the light and peonies blooming with gentle grace,
-            my heart always turns toward you.
+            Everything i feel for you is genuine,
+            my love for you continues to grow every single day.
         </p>
         <p>
-            In every season, in every sunrise, you are my warmth,
-            my color, my forever spring.
+            You're the reason behind of my secret smiles everyday,
+            and you'll always have me, I love you always.
         </p>
-        <p class="signature">With all my love 💖</p>
+        <p class="signature">To my Yellow 🌻</p>
+        <button onclick="revealMessage()">Open My Heart</button>
     </div>
-</section>
 
-<script>
-// Create falling petals
-const petalsContainer = document.querySelector('.petals');
+    <div id="hiddenMessage" class="hidden-message">
+        💛 You are my sunshine, my happiness, my always.
+    </div>
 
-function createPetal() {
-    const petal = document.createElement('div');
-    petal.classList.add('petal');
-    
-    petal.style.left = Math.random() * 100 + "vw";
-    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
-    petal.style.opacity = Math.random();
-    petal.style.transform = `scale(${0.5 + Math.random()})`;
-    
-    petalsContainer.appendChild(petal);
-
-    setTimeout(() => {
-        petal.remove();
-    }, 10000);
-}
-
-setInterval(createPetal, 300);
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
