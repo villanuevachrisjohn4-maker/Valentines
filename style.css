@@ -1,32 +1,57 @@
 body {
     margin: 0;
     height: 100vh;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom, #1a2a6c, #b21f1f, #fdbb2d);
     overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    background: black;
     color: white;
 }
 
-/* Centered Letter */
+/* 🌅 Animated Sunset Sky */
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ff9966, #ff5e62, #ffcc70, #6a82fb);
+    background-size: 400% 400%;
+    animation: sunset 18s ease infinite;
+    z-index: 0;
+}
+
+@keyframes sunset {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 💛 Center Letter */
 .overlay {
     position: relative;
     z-index: 5;
     padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .letter {
     background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(15px);
     padding: 30px;
     border-radius: 25px;
-    max-width: 420px;
+    text-align: center;
     width: 90%;
+    max-width: 420px;
     box-shadow: 0 0 40px rgba(255,255,255,0.3);
     animation: fadeIn 2s ease;
+}
+
+.signature {
+    margin-top: 15px;
+    font-style: italic;
 }
 
 button {
@@ -36,78 +61,87 @@ button {
     border: none;
     background: #ff4d6d;
     color: white;
-    font-size: 16px;
     cursor: pointer;
+    font-size: 16px;
     transition: 0.3s;
 }
 
 button:hover {
     transform: scale(1.1);
-    background: #ff1e4d;
 }
 
 .hidden-message {
-    margin-top: 20px;
+    margin-top: 15px;
     display: none;
     font-size: 18px;
 }
 
-/* Real Flowers */
-.flowers {
+/* 🌸🌻 Flower Field */
+.flower-field {
     position: absolute;
     bottom: 0;
     width: 100%;
-    z-index: 1;
+    height: 50%;
+    z-index: 2;
 }
 
 .flower {
     position: absolute;
     bottom: 0;
-    width: 120px;
-    animation: floatUp 6s ease-in-out infinite alternate;
+    width: 40px;
+    height: 140px;
+    transform-origin: bottom;
+    animation: sway 4s ease-in-out infinite alternate;
 }
 
-.sunflower { left: 5%; }
-.peony { left: 30%; }
-.sunflower2 { right: 5%; }
-.peony2 { right: 30%; }
-
-.flower {
-    border-radius: 20px;
+/* Stem */
+.stem {
+    width: 4px;
+    height: 90px;
+    background: linear-gradient(to top, #0a5f00, #3cb043);
+    margin: auto;
 }
 
-/* Petals */
-.petals span {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: pink;
+/* Peony Bloom */
+.peony {
+    width: 45px;
+    height: 45px;
+    background: radial-gradient(circle, #ffb6d9, #ff4da6);
     border-radius: 50%;
-    animation: float 10s linear infinite;
+    margin: auto;
+    box-shadow: 0 0 15px #ff8ac6;
 }
 
-/* Hearts */
-.hearts span {
+/* Sunflower Bloom */
+.sunflower {
+    width: 45px;
+    height: 45px;
+    background: radial-gradient(circle, #5c3d00 30%, #ffcc00 60%);
+    border-radius: 50%;
+    margin: auto;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+@keyframes sway {
+    from { transform: rotate(-6deg); }
+    to { transform: rotate(6deg); }
+}
+
+/* ✨ Fireflies */
+.fireflies span {
     position: absolute;
-    color: #ff4d6d;
-    font-size: 20px;
-    animation: fall 6s linear infinite;
+    width: 6px;
+    height: 6px;
+    background: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 12px yellow;
+    animation: fly 8s linear infinite;
 }
 
-/* Animations */
-@keyframes floatUp {
-    from { transform: translateY(0); }
-    to { transform: translateY(-40px); }
-}
-
-@keyframes float {
-    from { transform: translateY(100vh); }
-    to { transform: translateY(-10vh); }
-}
-
-@keyframes fall {
-    from { transform: translateY(-10vh); }
-    to { transform: translateY(100vh); }
+@keyframes fly {
+    from { transform: translateY(100vh); opacity: 0; }
+    50% { opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
 }
 
 @keyframes fadeIn {
@@ -115,7 +149,7 @@ button:hover {
     to {opacity:1;}
 }
 
-/* Mobile */
+/* 📱 Mobile */
 @media (max-width: 600px) {
-    .flower { width: 80px; }
+    .flower { width: 30px; }
 }
