@@ -1,17 +1,17 @@
 function startExperience() {
     const music = document.getElementById("bgMusic");
+
+    music.load();
     music.volume = 0.7;
 
-    music.play().then(() => {
-        console.log("Music playing");
-    }).catch(() => {
+    music.play().catch(() => {
         document.body.addEventListener("click", () => music.play(), { once: true });
     });
 
     document.getElementById("hiddenMessage").style.display = "block";
 }
 
-/* 🌻🌸 Generate Flowers */
+/* Generate Flowers */
 const field = document.querySelector(".flower-field");
 
 for (let i = 0; i < 25; i++) {
@@ -21,6 +21,15 @@ for (let i = 0; i < 25; i++) {
 
     const stem = document.createElement("div");
     stem.className = "stem";
+
+    // Leaves
+    for (let k = 0; k < 2; k++) {
+        const leaf = document.createElement("div");
+        leaf.className = "leaf";
+        leaf.style.left = k === 0 ? "-20px" : "10px";
+        leaf.style.transform = k === 0 ? "rotate(-40deg)" : "rotate(40deg)";
+        stem.appendChild(leaf);
+    }
 
     if (Math.random() > 0.5) {
         const sunflower = document.createElement("div");
@@ -56,9 +65,8 @@ for (let i = 0; i < 25; i++) {
     field.appendChild(flower);
 }
 
-/* 🌾 Generate Grass Blades */
+/* Grass */
 const grassField = document.querySelector(".grass-field");
-
 for (let i = 0; i < 120; i++) {
     const blade = document.createElement("div");
     blade.className = "grass-blade";
@@ -67,12 +75,22 @@ for (let i = 0; i < 120; i++) {
     grassField.appendChild(blade);
 }
 
-/* ✨ Fireflies */
+/* Fireflies */
 const fireflies = document.querySelector(".fireflies");
-
 for (let i = 0; i < 40; i++) {
     const light = document.createElement("span");
     light.style.left = Math.random() * 100 + "vw";
     light.style.animationDuration = 5 + Math.random() * 5 + "s";
     fireflies.appendChild(light);
 }
+
+/* Parallax */
+document.addEventListener("mousemove", (e) => {
+    const x = (window.innerWidth / 2 - e.clientX) / 40;
+    const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+    document.querySelector(".flower-field").style.transform =
+        `translate(${x}px, ${y}px)`;
+    document.querySelector(".moon").style.transform =
+        `translate(${x * 0.5}px, ${y * 0.5}px)`;
+});
