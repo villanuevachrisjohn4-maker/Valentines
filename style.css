@@ -2,104 +2,153 @@ body {
     margin: 0;
     height: 100vh;
     background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: 'Segoe UI', sans-serif;
     overflow: hidden;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Letter Card */
+/* Envelope */
+.envelope-wrapper {
+    position: absolute;
+    cursor: pointer;
+    animation: pulseGlow 2s infinite;
+}
+
+.envelope {
+    width: 180px;
+    height: 120px;
+    background: #ff4d6d;
+    position: relative;
+    border-radius: 10px;
+}
+
+.flap {
+    width: 100%;
+    height: 100%;
+    background: #ff758f;
+    position: absolute;
+    clip-path: polygon(0 0, 50% 60%, 100% 0);
+    transition: transform 1s;
+    transform-origin: top;
+}
+
+.glow {
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 30px #ff4d6d;
+    border-radius: 10px;
+}
+
+.open .flap {
+    transform: rotateX(180deg);
+}
+
+/* Letter */
 .letter {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
-    width: 350px;
-    z-index: 2;
-    animation: fadeIn 2s ease-in-out;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 2s ease;
 }
 
-.letter h1 {
-    margin-bottom: 20px;
-}
-
-.signature {
-    margin-top: 20px;
-    font-style: italic;
-    color: #ffd700;
+.hidden {
+    display: none;
 }
 
 button {
     margin-top: 20px;
     padding: 10px 20px;
-    border: none;
     border-radius: 20px;
+    border: none;
     background: #ff4d6d;
     color: white;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-button:hover {
-    background: #ff758f;
-    transform: scale(1.1);
-}
-
-/* Hidden Message */
-.hidden-message {
-    position: absolute;
-    bottom: 40px;
-    font-size: 20px;
-    opacity: 0;
-    transition: 1s;
-}
-
-.show {
-    opacity: 1;
-}
-
-/* Flowers */
+/* Flowers Growing */
 .flowers {
     position: absolute;
     bottom: 0;
+    width: 100%;
 }
 
-/* Sunflower */
+.sunflower, .peony {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: grow 3s forwards;
+}
+
 .sunflower {
+    left: 10%;
     width: 120px;
     height: 120px;
     background: radial-gradient(circle, #5c3d00 30%, #ffcc00 60%);
-    border-radius: 50%;
-    position: absolute;
-    left: -150px;
-    bottom: 0;
-    box-shadow: 0 0 20px #ffcc00;
+    animation-delay: 1s;
 }
 
-/* Peonies */
 .peony {
     width: 90px;
     height: 90px;
     background: radial-gradient(circle, #ff99cc 30%, #ff4da6 70%);
-    border-radius: 50%;
+}
+
+.peony1 { left: 70%; animation-delay: 1.5s; }
+.peony2 { left: 50%; animation-delay: 2s; }
+
+/* Floating Petals */
+.petals span {
     position: absolute;
-    bottom: 20px;
-    box-shadow: 0 0 15px pink;
+    width: 15px;
+    height: 15px;
+    background: pink;
+    border-radius: 50%;
+    animation: float 10s linear infinite;
 }
 
-.peony1 {
-    left: 150px;
+/* Falling Hearts */
+.hearts span {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: fall 6s linear infinite;
 }
 
-.peony2 {
-    left: 250px;
+/* Animations */
+@keyframes grow {
+    to { transform: scale(1); }
 }
 
-/* Animation */
+@keyframes float {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+}
+
+@keyframes fall {
+    from { transform: translateY(-10vh); }
+    to { transform: translateY(100vh); }
+}
+
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@keyframes pulseGlow {
+    0%,100% { box-shadow: 0 0 20px #ff4d6d; }
+    50% { box-shadow: 0 0 40px #ff99aa; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .sunflower { width: 80px; height: 80px; }
+    .peony { width: 60px; height: 60px; }
 }
