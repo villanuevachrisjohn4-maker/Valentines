@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    color: white;
+}
+
+/* Letter Card */
+.letter {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    width: 350px;
+    z-index: 2;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.letter h1 {
+    margin-bottom: 20px;
+}
+
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    color: #ffd700;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff758f;
+    transform: scale(1.1);
+}
+
+/* Hidden Message */
+.hidden-message {
+    position: absolute;
+    bottom: 40px;
+    font-size: 20px;
+    opacity: 0;
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+}
+
+/* Flowers */
+.flowers {
+    position: absolute;
+    bottom: 0;
+}
+
+/* Sunflower */
+.sunflower {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #5c3d00 30%, #ffcc00 60%);
+    border-radius: 50%;
+    position: absolute;
+    left: -150px;
+    bottom: 0;
+    box-shadow: 0 0 20px #ffcc00;
+}
+
+/* Peonies */
+.peony {
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle, #ff99cc 30%, #ff4da6 70%);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    box-shadow: 0 0 15px pink;
+}
+
+.peony1 {
+    left: 150px;
+}
+
+.peony2 {
+    left: 250px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
