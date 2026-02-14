@@ -9,10 +9,12 @@
 <body>
 
 <audio id="bgMusic" loop preload="auto">
-    <source src="music.mp3" type="audio/mpeg">
+    <source src="./music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="sky"></div>
+<div class="moon"></div>
+<div class="fog"></div>
 
 <div class="flower-field"></div>
 <div class="grass-field"></div>
